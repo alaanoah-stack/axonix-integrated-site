@@ -1,0 +1,52 @@
+---
+const reasons = [
+  {
+    title: "Engineered Designs (Not Guesswork)",
+    desc: "We plan coverage, power, pathways, and network architecture before install—so the system performs from day one.",
+  },
+  {
+    title: "Clean Rack Standards",
+    desc: "Proper labeling, cable management, patching, and documentation—built to be serviceable and scalable.",
+  },
+  {
+    title: "Enterprise-Grade Hardware",
+    desc: "We build with reliable components chosen for uptime, supportability, and total cost of ownership.",
+  },
+  {
+    title: "AI-Ready Deployment Strategy",
+    desc: "Storage sizing, bandwidth planning, and camera placement designed for analytics and future expansion.",
+  },
+  {
+    title: "Documentation Handoff",
+    desc: "As-builts, device lists, port maps, and logical diagrams so you can operate and maintain confidently.",
+  },
+  {
+    title: "Remote Support Options",
+    desc: "When it makes sense, we can support remotely for faster troubleshooting and reduced downtime.",
+  },
+];
+
+const { id = "why" } = Astro.props;
+---
+
+<section id={id} class="bg-white">
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:py-24">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+        Why Axonix
+      </h2>
+      <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+        Integrated technologies delivered with engineering discipline, clean installation, and long-term scalability.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {reasons.map((r) => (
+        <div class="rounded-2xl border border-slate-200 bg-slate-50/40 p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-slate-950">{r.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">{r.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
