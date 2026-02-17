@@ -1,0 +1,56 @@
+---
+const { id = "projects" } = Astro.props;
+
+const highlights = [
+  { k: "Scope", v: "Multi-building campus deployment" },
+  { k: "Systems", v: "IP cameras, network rack, access control readiness" },
+  { k: "Approach", v: "Centralized design + clean documentation handoff" },
+  { k: "Outcome", v: "Scalable foundation for growth and remote support" },
+];
+---
+
+<section id={id} class="bg-slate-950 text-white">
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:py-24">
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+      <div>
+        <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
+          Project Spotlight
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg">
+          Example of how we execute: engineered design, clean install, and documentation that makes operations easy.
+        </p>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href="#contact" class="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-slate-100">
+            Discuss a Project
+          </a>
+          <a href="#services" class="inline-flex items-center justify-center rounded-xl border border-slate-700 bg-slate-900/30 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-900/50">
+            See Capabilities
+          </a>
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-slate-800 bg-slate-950/40 p-6">
+        <div class="flex items-center justify-between">
+          <p class="text-sm font-semibold">Commercial / Institutional Deployment</p>
+          <span class="rounded-full border border-slate-700 bg-slate-900/40 px-3 py-1 text-xs text-slate-200">
+            Reference Build
+          </span>
+        </div>
+
+        <div class="mt-6 grid gap-4">
+          {highlights.map((h) => (
+            <div class="rounded-xl border border-slate-800 bg-slate-950/40 p-4">
+              <p class="text-xs text-slate-400">{h.k}</p>
+              <p class="mt-1 text-sm font-semibold">{h.v}</p>
+            </div>
+          ))}
+        </div>
+
+        <p class="mt-6 text-xs text-slate-400">
+          Want this section to reflect your exact projects (Victory Inn, church campus, etc.)? Tell me which one to feature and I’ll rewrite it precisely.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
