@@ -1,0 +1,34 @@
+---
+const industries = [
+  { name: "Hospitality", detail: "Multi-building sites, camera coverage, guest safety, network backbone." },
+  { name: "Religious Institutions", detail: "Campus coverage, access control, streaming & AV, safety workflows." },
+  { name: "Retail & Multi-Site", detail: "Loss prevention, AI analytics, standardized rollouts, remote support." },
+  { name: "Warehousing & Industrial", detail: "Perimeter coverage, PoE planning, rack standards, uptime." },
+  { name: "Commercial Offices", detail: "Controlled access, conferencing AV, structured cabling upgrades." },
+  { name: "Mixed-Use Properties", detail: "Scalable design, tenant separation, VLAN segmentation, documentation." },
+];
+
+const { id = "industries" } = Astro.props;
+---
+
+<section id={id} class="bg-slate-50">
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:py-24">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+        Industries Served
+      </h2>
+      <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+        Built for real environments: complex sites, long cable runs, clean racks, and systems that keep working.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {industries.map((i) => (
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-slate-950">{i.name}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">{i.detail}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
