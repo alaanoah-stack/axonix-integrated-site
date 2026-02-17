@@ -1,6 +1,6 @@
 {
 	"name": "axonix-integrated-site",
-	"description": "Build a personal website, blog, or portfolio with Astro.",
+	"description": "Axonix Integrated Technologies LLC - Intelligent Infrastructure",
 	"cloudflare": {
 		"label": "Astro Framework Starter",
 		"products": [
@@ -16,7 +16,9 @@
 		"@astrojs/mdx": "4.3.13",
 		"@astrojs/rss": "4.0.14",
 		"@astrojs/sitemap": "3.6.1",
+		"@astrojs/tailwind": "^5.1.0",
 		"astro": "5.16.9",
+		"tailwindcss": "^3.4.0",
 		"typescript": "5.9.3"
 	},
 	"devDependencies": {
