@@ -1,0 +1,74 @@
+---
+const { id = "contact" } = Astro.props;
+---
+
+<section id={id} class="bg-slate-950 text-white">
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:py-24">
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
+      <div>
+        <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
+          Request a Technical Consultation
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg">
+          Tell us what you’re building. We’ll respond with clear next steps: scope, recommended approach, and timeline.
+        </p>
+
+        <div class="mt-8 space-y-3 text-sm text-slate-300">
+          <p><span class="font-semibold text-white">Typical Projects:</span> surveillance + analytics, access control, cabling/fiber, commercial AV, rack integration.</p>
+          <p><span class="font-semibold text-white">Service Area:</span> Michigan (and multi-site deployments by request)</p>
+          <p><span class="font-semibold text-white">Response:</span> Usually within 1 business day</p>
+        </div>
+      </div>
+
+      <!-- Layout-ready form (wire to email/CRM next) -->
+      <form class="rounded-2xl border border-slate-800 bg-slate-950/40 p-6 shadow-sm">
+        <div class="grid gap-4 sm:grid-cols-2">
+          <input class="rounded-xl border border-slate-700 bg-slate-900/40 px-4 py-3 text-sm text-white placeholder:text-slate-400"
+            placeholder="Name" />
+          <input class="rounded-xl border border-slate-700 bg-slate-900/40 px-4 py-3 text-sm text-white placeholder:text-slate-400"
+            placeholder="Company" />
+        </div>
+
+        <div class="mt-4 grid gap-4 sm:grid-cols-2">
+          <input class="rounded-xl border border-slate-700 bg-slate-900/40 px-4 py-3 text-sm text-white placeholder:text-slate-400"
+            placeholder="Phone" />
+          <input class="rounded-xl border border-slate-700 bg-slate-900/40 px-4 py-3 text-sm text-white placeholder:text-slate-400"
+            placeholder="Email" />
+        </div>
+
+        <div class="mt-4">
+          <select class="w-full rounded-xl border border-slate-700 bg-slate-900/40 px-4 py-3 text-sm text-white">
+            <option>Project Type (select)</option>
+            <option>AI Surveillance / Cameras</option>
+            <option>Structured Cabling / Fiber</option>
+            <option>Access Control</option>
+            <option>Commercial AV / Audio</option>
+            <option>Network / Rack Integration</option>
+            <option>Systems Integration</option>
+          </select>
+        </div>
+
+        <div class="mt-4">
+          <textarea rows="5"
+            class="w-full rounded-xl border border-slate-700 bg-slate-900/40 px-4 py-3 text-sm text-white placeholder:text-slate-400"
+            placeholder="Briefly describe your site (building type, # cameras/doors, cabling scope, timeline)"></textarea>
+        </div>
+
+        <button type="button"
+          class="mt-5 inline-flex w-full items-center justify-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-slate-100">
+          Send Request
+        </button>
+
+        <p class="mt-3 text-xs text-slate-400">
+          (Next step: wire this to email/CRM. The layout is ready.)
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <div class="border-t border-slate-800">
+    <div class="mx-auto max-w-7xl px-6 py-6 text-xs text-slate-400">
+      © {new Date().getFullYear()} Axonix Integrated Technologies LLC. All rights reserved.
+    </div>
+  </div>
+</section>
