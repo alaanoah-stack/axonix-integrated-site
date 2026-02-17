@@ -1,0 +1,92 @@
+---
+const capabilities = [
+  {
+    title: "AI Surveillance & Analytics",
+    desc: "Camera design, NVR architecture, smart detection, and AI-ready deployments for safety and loss prevention.",
+    points: ["IP camera systems", "NVR & storage sizing", "Remote monitoring options"],
+  },
+  {
+    title: "Structured Cabling & Fiber",
+    desc: "Enterprise cabling with clean pathways, labeling, testing, and rack buildouts that scale.",
+    points: ["Cat6/Cat6A", "Fiber uplinks", "Testing & certification"],
+  },
+  {
+    title: "Access Control Systems",
+    desc: "Door hardware, controllers, and cloud/on-prem setups designed for reliability and safe egress.",
+    points: ["Maglocks & strikes", "Fail-safe/secure design", "Door schedules & as-builts"],
+  },
+  {
+    title: "Commercial AV & Audio",
+    desc: "Paging, 70V audio, conferencing, and multi-zone systems with clear coverage and control.",
+    points: ["70V audio design", "Zone control", "Streaming support"],
+  },
+  {
+    title: "Network & Rack Integration",
+    desc: "VLANs, PoE budgets, switch selection, and structured racks built for uptime and serviceability.",
+    points: ["PoE planning", "VLAN segmentation", "Rack standards & labeling"],
+  },
+  {
+    title: "Systems Integration",
+    desc: "Bringing security, AV, and network into one reliable operating environment with proper documentation.",
+    points: ["Unified workflows", "Automation options", "Documentation handoff"],
+  },
+];
+
+const {
+  heading = "Core Capabilities",
+  subheading = "Integrated systems designed for performance, security, and scalability.",
+  id = "services",
+} = Astro.props;
+---
+
+<section id={id} class="bg-white">
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:py-24">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+        {heading}
+      </h2>
+      <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+        {subheading}
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {capabilities.map((c) => (
+        <div class="group rounded-2xl border border-slate-200 bg-slate-50/40 p-6 shadow-sm transition hover:bg-white hover:shadow-md">
+          <div class="flex items-start justify-between gap-4">
+            <h3 class="text-lg font-semibold text-slate-950">{c.title}</h3>
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 transition group-hover:text-slate-900">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v6" />
+                <path d="M12 16v6" />
+                <path d="M2 12h6" />
+                <path d="M16 12h6" />
+                <path d="M7 7l4 4" />
+                <path d="M13 13l4 4" />
+                <path d="M17 7l-4 4" />
+                <path d="M11 13l-4 4" />
+              </svg>
+            </span>
+          </div>
+
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">
+            {c.desc}
+          </p>
+
+          <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            {c.points.map((p) => (
+              <li class="flex gap-2">
+                <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 text-white">
+                  <svg viewBox="0 0 20 20" class="h-3.5 w-3.5" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.704 5.29a1 1 0 010 1.42l-7.2 7.2a1 1 0 01-1.42 0l-3.2-3.2a1 1 0 011.42-1.42l2.49 2.49 6.49-6.49a1 1 0 011.42 0z" clip-rule="evenodd"/>
+                  </svg>
+                </span>
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
