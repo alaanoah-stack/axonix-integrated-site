@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro'; // Or whatever your base layout is called
+import Layout from '../layouts/Layout.astro';
 import IndustrialHero from "../components/IndustrialHero.astro";
 import CoreCapabilities from "../components/CoreCapabilities.astro";
 import IndustriesServed from "../components/IndustriesServed.astro";
@@ -9,10 +9,14 @@ import ProcessSection from "../components/ProcessSection.astro";
 import ContactSection from "../components/ContactSection.astro";
 ---
 
-<IndustrialHero />
-<CoreCapabilities />
-<IndustriesServed />
-<WhyAxonix />
-<ProjectSpotlight />
-<ProcessSection />
-<ContactSection />
+<Layout title="Axonix Integrated Technologies | Intelligent Infrastructure">
+	<main>
+		<IndustrialHero />
+		<CoreCapabilities />
+		<IndustriesServed />
+		<WhyAxonix />
+		<ProjectSpotlight />
+		<ProcessSection />
+		<ContactSection />
+	</main>
+</Layout>
