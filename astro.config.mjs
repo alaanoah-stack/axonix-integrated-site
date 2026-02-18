@@ -1,6 +1,7 @@
-import { defineConfig } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
+import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  integrations: [tailwind()],
+  integrations: [sitemap()],
+  output: "static",
 });
