@@ -1,5 +1,7 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
 import IndustrialHero from "../components/IndustrialHero.astro";
 import CoreCapabilities from "../components/CoreCapabilities.astro";
 import IndustriesServed from "../components/IndustriesServed.astro";
@@ -9,14 +11,24 @@ import ProcessSection from "../components/ProcessSection.astro";
 import ContactSection from "../components/ContactSection.astro";
 ---
 
-<Layout title="Axonix Integrated Technologies | Intelligent Infrastructure">
-	<main>
-		<IndustrialHero />
-		<CoreCapabilities />
-		<IndustriesServed />
-		<WhyAxonix />
-		<ProjectSpotlight />
-		<ProcessSection />
-		<ContactSection />
-	</main>
-</Layout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Axonix Integrated Technologies</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <IndustrialHero />
+      <CoreCapabilities />
+      <IndustriesServed />
+      <WhyAxonix />
+      <ProjectSpotlight />
+      <ProcessSection />
+      <ContactSection />
+    </main>
+    <Footer />
+  </body>
+</html>
