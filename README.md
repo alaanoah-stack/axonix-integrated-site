@@ -1,64 +1,102 @@
-# Astro Starter Kit: Blog
+# Axonix Integrated Technologies — Website
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/astro-blog-starter-template)
+Production-ready multi-page commercial website.
 
-![Astro Template Preview](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+## File Structure
 
-<!-- dash-content-start -->
-
-Create a blog with Astro and deploy it on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-- ✅ Built-in Observability logging
-
-<!-- dash-content-end -->
-
-## Getting Started
-
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
-
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/astro-blog-starter-template
+```
+axonix-website/
+├── index.html                          ← Homepage
+├── services/
+│   ├── index.html                      ← Services hub
+│   ├── surveillance.html
+│   ├── access-control.html
+│   ├── network-infrastructure.html
+│   └── structured-cabling.html
+├── projects/index.html
+├── about/index.html
+├── contact/index.html
+├── privacy/index.html
+├── terms/index.html
+└── assets/
+    ├── css/shared.css                  ← All styles
+    └── js/components.js                ← Nav, footer, scroll reveal, form
 ```
 
-A live public deployment of this template is available at [https://astro-blog-starter-template.templates.workers.dev](https://astro-blog-starter-template.templates.workers.dev)
+## Setup: Contact Form (REQUIRED before launch)
 
-## 🚀 Project Structure
+1. Go to https://formspree.io and create a free account
+2. Create a new form → copy your Form ID (looks like `xpzvowkq`)
+3. Open `contact/index.html`
+4. Find this line:
+   ```html
+   <form ... action="https://formspree.io/f/YOUR_FORM_ID"
+   ```
+5. Replace `YOUR_FORM_ID` with your actual ID
+6. Done — form submissions will be emailed to the address you registered with
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Run Locally
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+**Option A — Python (built-in):**
+```bash
+cd axonix-website
+python3 -m http.server 8080
+```
+Open http://localhost:8080
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+**Option B — VS Code Live Server:**
+Install "Live Server" extension → right-click index.html → Open with Live Server
 
-Any static assets, like images, can be placed in the `public/` directory.
+> ⚠️ Do NOT open HTML files directly (file://) — relative paths for CSS/JS require a server.
 
-## 🧞 Commands
+## Deploy to GitHub Pages
 
-All commands are run from the root of the project, from a terminal:
+```bash
+# 1. Create a new repo on github.com named: axonix-website (or your domain)
 
-| Command                           | Action                                           |
-| :-------------------------------- | :----------------------------------------------- |
-| `npm install`                     | Installs dependencies                            |
-| `npm run dev`                     | Starts local dev server at `localhost:4321`      |
-| `npm run build`                   | Build your production site to `./dist/`          |
-| `npm run preview`                 | Preview your build locally, before deploying     |
-| `npm run astro ...`               | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help`         | Get help using the Astro CLI                     |
-| `npm run build && npm run deploy` | Deploy your production site to Cloudflare        |
-| `npm wrangler tail`               | View real-time logs for all Workers              |
+# 2. In this folder:
+git init
+git add .
+git commit -m "Initial site launch"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/axonix-website.git
+git push -u origin main
 
-## 👀 Want to learn more?
+# 3. On GitHub: Settings → Pages → Source: Deploy from branch → main → / (root)
+# Your site will be live at: https://YOUR_USERNAME.github.io/axonix-website/
+```
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Deploy to Custom Domain (axonixintegrated.com)
 
-## Credit
+1. In your repo root, create a file named `CNAME` containing:
+   ```
+   axonixintegrated.com
+   ```
+2. Push it to GitHub
+3. In your domain registrar (GoDaddy/Namecheap/etc), add DNS records:
+   ```
+   A     @     185.199.108.153
+   A     @     185.199.109.153
+   A     @     185.199.110.153
+   A     @     185.199.111.153
+   CNAME www   YOUR_USERNAME.github.io
+   ```
+4. Back on GitHub: Settings → Pages → Custom domain → enter axonixintegrated.com
+5. Check "Enforce HTTPS" once it activates (takes up to 24 hrs)
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+## What's Included
+
+- ✅ 11 fully-written HTML pages (no JS routing — real file structure)
+- ✅ Shared CSS design system (one file controls all styles)
+- ✅ Shared JS: nav injection, footer injection, scroll reveal, mobile nav, active link highlighting, form validation + Formspree submission
+- ✅ SEO: unique title + meta description on every page, Open Graph tags, JSON-LD LocalBusiness schema on homepage
+- ✅ Contact form with client-side validation, Formspree backend, success confirmation state
+- ✅ Partner/technology logos section (Ubiquiti, Axis, Avigilon, Verkada, Hikvision, Cisco)
+- ✅ Testimonials on homepage, about, and contact pages
+- ✅ Project filter on projects page
+- ✅ Scroll reveal animations on all pages
+- ✅ Active nav link highlighting per page
+- ✅ Phone number in nav (clickable tel: link)
+- ✅ Privacy Policy and Terms of Service pages
+- ✅ Mobile-first responsive, all buttons ≥ 48px
+- ✅ All contact info: 586-339-5370 / al.eagleeyes@gmail.com
