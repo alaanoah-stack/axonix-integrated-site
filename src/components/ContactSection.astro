@@ -7,24 +7,23 @@ const { id = "contact" } = Astro.props;
     <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
       <div>
         <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
-          Request a Technical Consultation
+          Start Your Project
         </h2>
         <p class="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg">
-          Tell us what you’re building. We’ll respond with clear next steps: scope, recommended approach, and timeline.
+          Whether you're scoping a single-facility upgrade or planning a multi-site infrastructure rollout — we'll assess your requirements and build a solution that's engineered to last.
         </p>
 
         <div class="mt-8 space-y-3 text-sm text-slate-300">
-          <p><span class="font-semibold text-white">Typical Projects:</span> surveillance + analytics, access control, cabling/fiber, commercial AV, rack integration.</p>
-          <p><span class="font-semibold text-white">Service Area:</span> Michigan (and multi-site deployments by request)</p>
-          <p><span class="font-semibold text-white">Response:</span> Usually within 1 business day</p>
+          <p><span class="font-semibold text-white">Typical Projects:</span> AI surveillance, enterprise networking, access control, commercial AV, smart automation, full infrastructure builds, and system takeovers.</p>
+          <p><span class="font-semibold text-white">Service Area:</span> Metro Detroit, Michigan — and multi-site deployments by request.</p>
+          <p><span class="font-semibold text-white">Response:</span> Usually within 1 business day.</p>
         </div>
       </div>
 
-      <!-- Layout-ready form (wire to email/CRM next) -->
       <form class="rounded-2xl border border-slate-800 bg-slate-950/40 p-6 shadow-sm">
         <div class="grid gap-4 sm:grid-cols-2">
           <input class="rounded-xl border border-slate-700 bg-slate-900/40 px-4 py-3 text-sm text-white placeholder:text-slate-400"
-            placeholder="Name" />
+            placeholder="Full Name" />
           <input class="rounded-xl border border-slate-700 bg-slate-900/40 px-4 py-3 text-sm text-white placeholder:text-slate-400"
             placeholder="Company" />
         </div>
@@ -38,20 +37,27 @@ const { id = "contact" } = Astro.props;
 
         <div class="mt-4">
           <select class="w-full rounded-xl border border-slate-700 bg-slate-900/40 px-4 py-3 text-sm text-white">
-            <option>Project Type (select)</option>
+            <option>Service Needed (select)</option>
             <option>AI Surveillance / Cameras</option>
-            <option>Structured Cabling / Fiber</option>
+            <option>Cabling &amp; Enterprise Networking</option>
             <option>Access Control</option>
             <option>Commercial AV / Audio</option>
-            <option>Network / Rack Integration</option>
-            <option>Systems Integration</option>
+            <option>Smart Automation</option>
+            <option>Full Infrastructure Build</option>
+            <option>System Upgrade / Takeover</option>
+            <option>Not Sure — Need Consultation</option>
           </select>
+        </div>
+
+        <div class="mt-4">
+          <input class="w-full rounded-xl border border-slate-700 bg-slate-900/40 px-4 py-3 text-sm text-white placeholder:text-slate-400"
+            placeholder="Project Location (e.g. Detroit, MI)" />
         </div>
 
         <div class="mt-4">
           <textarea rows="5"
             class="w-full rounded-xl border border-slate-700 bg-slate-900/40 px-4 py-3 text-sm text-white placeholder:text-slate-400"
-            placeholder="Briefly describe your site (building type, # cameras/doors, cabling scope, timeline)"></textarea>
+            placeholder="Briefly describe your facility, scope, and timeline..."></textarea>
         </div>
 
         <button type="button"
@@ -59,8 +65,8 @@ const { id = "contact" } = Astro.props;
           Send Request
         </button>
 
-        <p class="mt-3 text-xs text-slate-400">
-          (Next step: wire this to email/CRM. The layout is ready.)
+        <p class="mt-4 text-xs text-slate-400 text-center">
+          Or email directly: <a href="mailto:info@axonixintegrated.com" class="text-slate-300 hover:text-white underline">info@axonixintegrated.com</a>
         </p>
       </form>
     </div>
