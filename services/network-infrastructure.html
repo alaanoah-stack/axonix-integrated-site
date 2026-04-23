@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commercial Network Infrastructure — LAN/WAN Design &amp; Deployment | Axonix</title>
+<meta name="description" content="Enterprise commercial network infrastructure — switching, PoE distribution, WiFi 6E, VLAN segmentation, and full documentation for Michigan commercial facilities.">
+<link rel="canonical" href="https://axonixintegrated.com/services/network-infrastructure.html">
+<meta property="og:url" content="https://axonixintegrated.com/services/network-infrastructure.html">
+<meta property="og:title" content="Network Infrastructure | Axonix Integrated Technologies">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/shared.css">
+<style>
+.flow-diagram{display:flex;align-items:center;overflow-x:auto;padding:8px 0;}
+.flow-step{display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;min-width:100px;}
+.flow-step-icon{width:52px;height:52px;background:var(--cyan-dim);border:1px solid rgba(0,200,255,0.25);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--cyan);}
+.flow-step-icon svg{width:22px;height:22px;}
+.flow-step-label{font-family:'Barlow',sans-serif;font-size:0.68rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary);text-align:center;}
+.flow-arrow{color:var(--text-muted);flex-shrink:0;font-size:1.3rem;margin:0 4px;align-self:center;margin-bottom:28px;}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<div class="page-hero-img">
+  <img class="hero-bg-img" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1920&q=80" alt="" loading="lazy">
+  <div class="hero-bg-overlay"></div>
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">/</span><a href="/services/">Services</a><span class="breadcrumb-sep">/</span><span>Network Infrastructure</span></div>
+    <div class="eyebrow" style="margin-bottom:12px;">Network Infrastructure</div>
+    <h1>Commercial Networks Designed<br>for What You're Actually Running</h1>
+    <p>Enterprise-grade LAN/WAN infrastructure — properly specified, segmented, and documented networks built to carry your surveillance, access control, and business systems reliably.</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a class="btn btn-primary" href="/contact/?service=network">Request Network Assessment</a>
+      <a class="btn btn-ghost" href="/services/structured-cabling.html">See Cabling Services</a>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px;margin-bottom:80px;">
+      <div class="eyebrow" style="margin-bottom:20px;">Network Architecture</div>
+      <div class="flow-diagram">
+        <div class="flow-step"><div class="flow-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M6 14h.01"/></svg></div><div class="flow-step-label">ISP / WAN</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="flow-step-label">Firewall</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="8" width="20" height="8" rx="2"/><circle cx="6" cy="12" r="1.5"/><circle cx="10" cy="12" r="1.5"/></svg></div><div class="flow-step-label">Core Switch</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="8" width="20" height="8" rx="2"/><path d="M6 10h.01M10 10h.01"/></svg></div><div class="flow-step-label">VLANs / IDF</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"/></svg></div><div class="flow-step-label">WiFi APs</div></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><div class="flow-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 7h6M9 11h4"/></svg></div><div class="flow-step-label">End Devices</div></div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="gap:64px;margin-bottom:80px;">
+      <div class="reveal">
+        <div class="eyebrow">The Problem</div>
+        <h2>Commercial Facilities Running Business-Critical Systems on Unmanaged Networks</h2>
+        <div class="divider"></div>
+        <p style="margin-bottom:16px;">Cameras, access control, POS systems, VoIP phones, employee WiFi, and guest networks all sharing the same flat network — no segmentation, no QoS, no redundancy. When one system misbehaves, everything suffers.</p>
+        <p>48 cameras overloading a PoE switch that wasn't specced for the load. Surveillance traffic competing with POS transactions. A guest WiFi network with a path to corporate systems.</p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="eyebrow">Our Approach</div>
+        <h2>Designed from the Backbone Out. Segmented by Function. Built to Scale.</h2>
+        <div class="divider"></div>
+        <p style="margin-bottom:16px;">We begin every network design with a load analysis — how many cameras, what's the PoE budget, what's the bandwidth requirement, where are the IDF locations. VLAN architecture is designed before we spec a single switch.</p>
+        <p>Every network we deploy is fully documented — rack diagrams, IP schemas, VLAN tables, switch port maps. Your IT team can open that document and understand exactly what's running where.</p>
+      </div>
+    </div>
+
+    <div style="margin-bottom:80px;">
+      <div style="margin-bottom:40px;"><div class="eyebrow">Technical Capabilities</div><h2>Network Systems We Design, Deploy, and Document</h2></div>
+      <div class="grid-3">
+        <div class="card reveal"><h4 style="color:var(--text-primary);margin-bottom:14px;">Switching &amp; Routing</h4><ul class="spec-list"><li>Managed Layer 2/3 enterprise switching</li><li>PoE+ and PoE++ distribution (802.3bt)</li><li>Redundant uplinks and STP/RSTP</li><li>Inter-VLAN routing and ACL policies</li><li>Cisco, Ubiquiti, Aruba, and Netgear Pro</li><li>UPS-backed IDF closets</li></ul></div>
+        <div class="card reveal reveal-delay-1"><h4 style="color:var(--text-primary);margin-bottom:14px;">Wireless Infrastructure</h4><ul class="spec-list"><li>WiFi 6 and WiFi 6E access point deployment</li><li>RF site survey and channel planning</li><li>High-density environments (warehouses, events)</li><li>Guest, corporate, and IoT SSID isolation</li><li>802.1X authentication and RADIUS integration</li><li>Outdoor and industrial-grade AP options</li></ul></div>
+        <div class="card reveal reveal-delay-2"><h4 style="color:var(--text-primary);margin-bottom:14px;">Security &amp; Segmentation</h4><ul class="spec-list"><li>VLAN design: surveillance, access, corporate, guest</li><li>Firewall policy (pfSense, FortiGate, USG)</li><li>IDS/IPS and network traffic monitoring</li><li>VPN tunnel for multi-site connectivity</li><li>Remote management and monitoring setup</li><li>Full network documentation package</li></ul></div>
+      </div>
+    </div>
+
+    <div class="cta-strip reveal">
+      <div class="eyebrow" style="margin-bottom:16px;">Build the Right Foundation</div>
+      <h2>Your Systems Are Only as Reliable as the Network Underneath Them</h2>
+      <p>We'll assess your current infrastructure, identify capacity and security gaps, and design a network that supports your systems today and scales with your facility's growth.</p>
+      <div class="btn-group">
+        <a class="btn btn-primary" href="/contact/?service=network">Request Network Assessment</a>
+        <a class="btn btn-ghost" href="/services/structured-cabling.html">See Cabling Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="/assets/js/components.js"></script>
+</body>
+</html>
