@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base href="/axonix-integrated-site/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commercial Infrastructure Projects | Axonix Integrated Technologies</title>
+<meta name="description" content="View Axonix Integrated Technologies commercial infrastructure deployments — surveillance systems, access control, structured cabling, and network projects across Metro Detroit.">
+<link rel="canonical" href="https://axonixintegrated.com/projects/">
+<meta property="og:type"  content="website">
+<meta property="og:url"   content="https://axonixintegrated.com/projects/">
+<meta property="og:title" content="Commercial Infrastructure Projects | Axonix">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Outfit:wght@300;400;500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/shared.css">
+<style>
+.project-detail-card { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden; margin-bottom:32px; }
+.project-detail-card:hover { border-color:rgba(0,200,255,0.18); }
+.project-detail-inner { display:grid; grid-template-columns:400px 1fr; }
+.project-detail-img { position:relative; min-height:360px; overflow:hidden; }
+.project-detail-img img { width:100%; height:100%; object-fit:cover; filter:saturate(0.6) brightness(0.65); }
+.project-detail-img-overlay { position:absolute; inset:0; background:linear-gradient(to right,transparent 60%,rgba(15,25,40,0.85) 100%); }
+.project-detail-badges { position:absolute; bottom:24px; left:24px; display:flex; flex-direction:column; gap:8px; }
+.project-detail-body { padding:40px; }
+.project-stats-row { display:flex; border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; margin-top:24px; }
+.project-stat-cell { flex:1; padding:16px; text-align:center; border-right:1px solid var(--border); }
+.project-stat-cell:last-child { border-right:none; }
+.project-stat-num { font-family:'Barlow Condensed',sans-serif; font-size:1.8rem; font-weight:800; color:var(--cyan); line-height:1; }
+.project-stat-lbl { font-size:0.63rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-top:4px; }
+.col-label { font-family:'Barlow',sans-serif; font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px; }
+@media(max-width:900px){ .project-detail-inner { grid-template-columns:1fr; } .project-detail-img { min-height:220px; } }
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<div class="page-hero-img">
+  <img class="hero-bg-img" src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1920&q=80" alt="" loading="lazy">
+  <div class="hero-bg-overlay"></div>
+  <div class="container">
+    <div class="breadcrumb"><a href="./">Home</a><span class="breadcrumb-sep">/</span><span>Projects</span></div>
+    <div class="eyebrow" style="margin-bottom:12px;">Project Portfolio</div>
+    <h1>Infrastructure Deployed.<br>Documented. Delivered.</h1>
+    <p>Each deployment reflects the Axonix Standard — scoped precisely, executed cleanly, and handed off with complete documentation.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Filter -->
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:52px;" id="filter-bar">
+      <button class="btn btn-secondary" style="padding:8px 18px;font-size:0.75rem;min-height:38px;" data-filter="all">All Projects</button>
+      <button class="btn btn-ghost"     style="padding:8px 18px;font-size:0.75rem;min-height:38px;" data-filter="surveillance">Surveillance</button>
+      <button class="btn btn-ghost"     style="padding:8px 18px;font-size:0.75rem;min-height:38px;" data-filter="access">Access Control</button>
+      <button class="btn btn-ghost"     style="padding:8px 18px;font-size:0.75rem;min-height:38px;" data-filter="cabling">Cabling &amp; Network</button>
+      <button class="btn btn-ghost"     style="padding:8px 18px;font-size:0.75rem;min-height:38px;" data-filter="multi">Multi-Discipline</button>
+    </div>
+
+    <!-- PROJECT 1 -->
+    <div class="project-detail-card reveal" data-tags="surveillance multi">
+      <div class="project-detail-inner">
+        <div class="project-detail-img">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Warehouse surveillance deployment" loading="lazy">
+          <div class="project-detail-img-overlay"></div>
+          <div class="project-detail-badges"><span class="badge badge-cyan">Surveillance</span><span class="badge badge-orange">Multi-Discipline</span></div>
+        </div>
+        <div class="project-detail-body">
+          <div class="eyebrow" style="margin-bottom:10px;">Project 01 — Warehouse / Industrial</div>
+          <h3 style="margin-bottom:6px;">Frank's Warehouse — Private Headquarters Complex</h3>
+          <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:28px;">Metro Detroit, MI &nbsp;·&nbsp; 2024 &nbsp;·&nbsp; Mixed-Use Private Headquarters</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:0;">
+            <div><div class="col-label">Challenge</div><p style="font-size:0.85rem;">Large mixed-use private headquarters required comprehensive video coverage across warehouse, vehicle staging, executive offices, and restricted zones — with specific privacy exclusions and access control integration at all entry points.</p></div>
+            <div><div class="col-label">Solution</div><p style="font-size:0.85rem;">24 UniFi G5 Turret Ultra cameras deployed across 8 defined zones with zone-organized IDs. Dedicated surveillance VLAN on new Cat6A backbone, tiered NVR with 30-day retention, and Avigilon Alta access control at all facility entry points.</p></div>
+            <div><div class="col-label">Result</div><p style="font-size:0.85rem;">Full coverage of all operational zones with privacy-excluded areas confirmed. Access events correlated with camera timestamps. Complete as-built documentation delivered including camera placement maps, cable schedule, and retention policies by zone.</p></div>
+          </div>
+          <div class="project-stats-row">
+            <div class="project-stat-cell"><div class="project-stat-num">24</div><div class="project-stat-lbl">IP Cameras</div></div>
+            <div class="project-stat-cell"><div class="project-stat-num">8</div><div class="project-stat-lbl">Zones</div></div>
+            <div class="project-stat-cell"><div class="project-stat-num">12</div><div class="project-stat-lbl">Access Doors</div></div>
+            <div class="project-stat-cell"><div class="project-stat-num">30d</div><div class="project-stat-lbl">Retention</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-detail-card reveal" data-tags="access multi">
+      <div class="project-detail-inner">
+        <div class="project-detail-img">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Hotel portfolio access control" loading="lazy">
+          <div class="project-detail-img-overlay"></div>
+          <div class="project-detail-badges"><span class="badge badge-orange">Access Control</span><span class="badge badge-cyan">4 Properties</span></div>
+        </div>
+        <div class="project-detail-body">
+          <div class="eyebrow" style="margin-bottom:10px;">Project 02 — Hospitality</div>
+          <h3 style="margin-bottom:6px;">Multi-Site Hotel Portfolio — Unified Access Deployment</h3>
+          <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:28px;">Southeast Michigan &nbsp;·&nbsp; 2024 &nbsp;·&nbsp; Hospitality Portfolio</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+            <div><div class="col-label">Challenge</div><p style="font-size:0.85rem;">4 hotel properties with no unified credential system — different key card platforms, manual onboarding/offboarding, no corporate visibility across the portfolio, and zero audit trail for access events.</p></div>
+            <div><div class="col-label">Solution</div><p style="font-size:0.85rem;">Avigilon Alta cloud-managed access control at 60+ doors across all 4 properties. Role-based credential structure for corporate, property management, department, and vendor tiers with automated provisioning workflow.</p></div>
+            <div><div class="col-label">Result</div><p style="font-size:0.85rem;">Single dashboard managing all 4 properties. Credential revocation in under 5 seconds. Full audit trail for all door events across the portfolio. Zero physical keys in circulation.</p></div>
+          </div>
+          <div class="project-stats-row" style="margin-top:24px;">
+            <div class="project-stat-cell"><div class="project-stat-num" style="color:var(--orange);">4</div><div class="project-stat-lbl">Properties</div></div>
+            <div class="project-stat-cell"><div class="project-stat-num" style="color:var(--orange);">60+</div><div class="project-stat-lbl">Controlled Doors</div></div>
+            <div class="project-stat-cell"><div class="project-stat-num" style="color:var(--orange);">&lt;5s</div><div class="project-stat-lbl">Revocation Time</div></div>
+            <div class="project-stat-cell"><div class="project-stat-num" style="color:var(--orange);">1</div><div class="project-stat-lbl">Unified Dashboard</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-detail-card reveal" data-tags="cabling multi">
+      <div class="project-detail-inner">
+        <div class="project-detail-img">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Retail chain cabling infrastructure" loading="lazy">
+          <div class="project-detail-img-overlay"></div>
+          <div class="project-detail-badges"><span class="badge badge-cyan">Structured Cabling</span><span class="badge badge-orange">6 Locations</span></div>
+        </div>
+        <div class="project-detail-body">
+          <div class="eyebrow" style="margin-bottom:10px;">Project 03 — Retail</div>
+          <h3 style="margin-bottom:6px;">Retail Chain Infrastructure Rollout — 6-Location Buildout</h3>
+          <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:28px;">Michigan &amp; Ohio &nbsp;·&nbsp; 2023–2024 &nbsp;·&nbsp; Retail Chain</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+            <div><div class="col-label">Challenge</div><p style="font-size:0.85rem;">Growing retail chain needed consistent infrastructure across 6 new locations. Different contractors at each prior site produced inconsistent deployments, creating ongoing IT support overhead and no standardized process for new stores.</p></div>
+            <div><div class="col-label">Solution</div><p style="font-size:0.85rem;">Developed a templated infrastructure design — standardized Cat6A cable plant, identical switch configuration, uniform camera placement by floor plan type, and identical IDF documentation across all 6 locations.</p></div>
+            <div><div class="col-label">Result</div><p style="font-size:0.85rem;">6 locations with identical infrastructure. IT director manages all locations from one platform using the same process. Each site deployed 20% faster than prior multi-contractor deployments.</p></div>
+          </div>
+          <div class="project-stats-row" style="margin-top:24px;">
+            <div class="project-stat-cell"><div class="project-stat-num">6</div><div class="project-stat-lbl">Locations</div></div>
+            <div class="project-stat-cell"><div class="project-stat-num">240+</div><div class="project-stat-lbl">Cable Runs</div></div>
+            <div class="project-stat-cell"><div class="project-stat-num">48</div><div class="project-stat-lbl">Cameras Total</div></div>
+            <div class="project-stat-cell"><div class="project-stat-num">20%</div><div class="project-stat-lbl">Faster / Site</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 4 -->
+    <div class="project-detail-card reveal" data-tags="surveillance cabling">
+      <div class="project-detail-inner">
+        <div class="project-detail-img">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=800&q=80" alt="Corporate office security upgrade" loading="lazy">
+          <div class="project-detail-img-overlay"></div>
+          <div class="project-detail-badges"><span class="badge badge-cyan">Surveillance</span><span class="badge badge-cyan">Cabling</span></div>
+        </div>
+        <div class="project-detail-body">
+          <div class="eyebrow" style="margin-bottom:10px;">Project 04 — Corporate Office</div>
+          <h3 style="margin-bottom:6px;">Corporate Office Campus — Security &amp; Infrastructure Upgrade</h3>
+          <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:28px;">Oakland County, MI &nbsp;·&nbsp; 2024 &nbsp;·&nbsp; Corporate Office</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+            <div><div class="col-label">Challenge</div><p style="font-size:0.85rem;">Three-building corporate campus with analog CCTV, an undocumented Cat5e cable plant, no PoE infrastructure for planned IP camera upgrade, and a flat network with no VLAN separation between surveillance, corporate, and guest traffic.</p></div>
+            <div><div class="col-label">Solution</div><p style="font-size:0.85rem;">Full Cat6A recabling of all three buildings with fiber interconnect between MDFs. New managed switching infrastructure with dedicated surveillance VLAN and PoE budget. 32 Axis IP cameras deployed with cloud VMS and 45-day retention.</p></div>
+            <div><div class="col-label">Result</div><p style="font-size:0.85rem;">Complete camera coverage across all three buildings with 4x the resolution of the prior system. Structured cabling now supports 10Gb backbone. Full as-built documentation delivered including fiber OTDR results.</p></div>
+          </div>
+          <div class="project-stats-row" style="margin-top:24px;">
+            <div class="project-stat-cell"><div class="project-stat-num">3</div><div class="project-stat-lbl">Buildings</div></div>
+            <div class="project-stat-cell"><div class="project-stat-num">32</div><div class="project-stat-lbl">IP Cameras</div></div>
+            <div class="project-stat-cell"><div class="project-stat-num">Cat6A</div><div class="project-stat-lbl">Full Recable</div></div>
+            <div class="project-stat-cell"><div class="project-stat-num">45d</div><div class="project-stat-lbl">Retention</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-strip" style="margin-top:48px;">
+      <div class="eyebrow" style="margin-bottom:16px;">Your Project</div>
+      <h2>Let's Talk About Your Facility's Infrastructure</h2>
+      <p>Whether you're starting from scratch or replacing systems that were never designed correctly — we'll scope the right solution for your facility, scale, and budget.</p>
+      <div class="btn-group">
+        <a class="btn btn-primary" href="contact/">Discuss a Similar Project</a>
+        <a class="btn btn-ghost" href="services/">View All Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="assets/js/components.js"></script>
+<script>
+document.getElementById('filter-bar').addEventListener('click', function(e) {
+  const btn = e.target.closest('[data-filter]');
+  if (!btn) return;
+  const filter = btn.dataset.filter;
+  // Update buttons
+  document.querySelectorAll('[data-filter]').forEach(b => {
+    b.className = 'btn btn-ghost';
+    b.style.cssText = 'padding:8px 18px;font-size:0.75rem;min-height:38px;';
+  });
+  btn.className = 'btn btn-secondary';
+  btn.style.cssText = 'padding:8px 18px;font-size:0.75rem;min-height:38px;';
+  // Filter cards
+  document.querySelectorAll('[data-tags]').forEach(card => {
+    const tags = card.dataset.tags || '';
+    card.style.display = (filter === 'all' || tags.includes(filter)) ? '' : 'none';
+  });
+});
+</script>
+</body>
+</html>
