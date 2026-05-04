@@ -1,0 +1,536 @@
+/* ============================================================================
+   Axonix — accessibility.css
+   Additive layer that sits ON TOP OF shared.css.
+   Do not edit shared.css for any of these — they're meant to be safe to merge
+   into any existing stylesheet without conflicts.
+   ========================================================================== */
+
+/* ---------- Skip-to-content link (keyboard-only) ---------- */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 8px;
+  padding: 10px 16px;
+  background: #00C8FF;
+  color: #060A14;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  z-index: 9999;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 8px;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ---------- Focus visibility (keyboard users only) ---------- */
+*:focus-visible {
+  outline: 2px solid #00C8FF;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #00C8FF;
+  outline-offset: 3px;
+}
+
+/* ---------- Reduced motion safety net ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Ensure scroll-reveal items are visible even if JS is delayed */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ---------- Header + Mobile drawer ---------- */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease, backdrop-filter 0.2s ease;
+}
+.site-header.is-scrolled {
+  background: rgba(6, 10, 20, 0.85);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 64px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+.brand-wordmark {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.nav-primary {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-link {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  transition: color 0.15s ease;
+  padding: 6px 0;
+  position: relative;
+}
+.nav-link:hover { color: #fff; }
+.nav-link.is-active {
+  color: #fff;
+}
+.nav-link.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 1px;
+  background: #00C8FF;
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.nav-tel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.nav-tel:hover { color: #00C8FF; }
+
+.btn-sm {
+  padding: 9px 16px;
+  font-size: 0.78rem;
+}
+
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0;
+}
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: #fff;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(5.5px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-5.5px) rotate(-45deg);
+}
+
+.mobile-drawer {
+  position: fixed;
+  inset: 64px 0 0 0;
+  background: rgba(6, 10, 20, 0.97);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  z-index: 99;
+  padding: 24px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  overflow-y: auto;
+}
+.mobile-drawer.is-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+.mobile-drawer-link {
+  display: block;
+  padding: 18px 12px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.mobile-drawer-tel {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  align-self: flex-start;
+}
+.mobile-drawer-cta {
+  margin-top: 12px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+body.drawer-open {
+  overflow: hidden;
+}
+
+/* Mobile responsive — hide desktop nav and tel, show toggle */
+@media (max-width: 900px) {
+  .nav-primary,
+  .nav-tel,
+  .nav-cta .btn-sm {
+    display: none;
+  }
+  .nav-toggle {
+    display: inline-flex;
+  }
+}
+
+/* ---------- Hero side image (mobile collapse) ---------- */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 64px;
+  align-items: center;
+}
+@media (max-width: 1100px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .hero-side {
+    display: none !important;
+  }
+}
+
+/* ---------- Mobile sticky CTA ---------- */
+/* Only shown on mobile widths. Body padding-bottom ensures form fields are
+   never covered. Always hidden on desktop. */
+.mobile-sticky-cta {
+  display: none;
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 90;
+  background: rgba(6, 10, 20, 0.97);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 8px;
+  gap: 8px;
+}
+.mobile-sticky-cta-item {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+}
+.mobile-sticky-cta-item svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+.mobile-sticky-cta-primary {
+  background: #00C8FF;
+  border-color: #00C8FF;
+  color: #060A14;
+}
+@media (max-width: 720px) {
+  .mobile-sticky-cta {
+    display: flex;
+  }
+  /* Push body content above sticky bar so it never covers form fields */
+  body {
+    padding-bottom: 72px;
+  }
+}
+
+/* ---------- Site footer ---------- */
+.site-footer {
+  background: #04060B;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 64px 0 32px;
+  margin-top: 80px;
+}
+.site-footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+@media (max-width: 900px) {
+  .site-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+@media (max-width: 540px) {
+  .site-footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.footer-col h4 {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0 0 14px;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-col a {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.footer-col a:hover { color: #00C8FF; }
+.brand-footer { margin-bottom: 16px; }
+.footer-blurb {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0 0 16px;
+  max-width: 380px;
+}
+.footer-area {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  line-height: 1.6;
+}
+.footer-area strong { color: rgba(255, 255, 255, 0.8); font-weight: 600; }
+.footer-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-bar p {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+.footer-bar-meta {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* ---------- Inline tel link button (hero) ---------- */
+.btn-tel-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 4px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.btn-tel-inline:hover { color: #00C8FF; }
+.btn-tel-inline strong {
+  font-weight: 700;
+  color: #00C8FF;
+}
+
+/* ---------- Form a11y states ---------- */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.form-row label {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+}
+.form-row label .req {
+  color: #FFA500;
+  margin-left: 3px;
+}
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.92rem;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+  min-height: 48px; /* tap target */
+}
+.form-row textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: rgba(0, 200, 255, 0.5);
+  background: rgba(0, 0, 0, 0.45);
+}
+.form-row input.is-error,
+.form-row select.is-error,
+.form-row textarea.is-error {
+  border-color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.06);
+}
+.form-row .helper {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 4px;
+}
+
+.form-status {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.form-status:empty { display: none; }
+.form-status-pending {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85);
+}
+.form-status-success {
+  background: rgba(0, 200, 255, 0.08);
+  border: 1px solid rgba(0, 200, 255, 0.3);
+  color: #b8eeff;
+}
+.form-status-error {
+  background: rgba(255, 107, 107, 0.08);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  color: #ffb8b8;
+}
+
+/* Honeypot — visually hidden but reachable to bots */
+.hp-field {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Loading state on submit button */
+button[aria-busy="true"],
+input[aria-busy="true"] {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+/* Tap targets */
+.btn,
+a.btn {
+  min-height: 44px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 200, 255, 0.3);
+  color: #fff;
+}
+
+/* Smooth scroll with header offset */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
