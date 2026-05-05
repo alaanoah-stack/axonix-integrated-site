@@ -1,0 +1,8 @@
+Place your compressed hero video in this folder and name it:
+axonix-hero.mp4
+
+Recommended:
+- 1920x1080 or 1280x720
+- 5 to 10 seconds
+- muted, looping, cinematic
+- under 8 MB if possible

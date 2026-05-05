@@ -1,0 +1,2 @@
+Place real Axonix project photos here later.
+Then update the image URLs in styles.css to point to these local files.
