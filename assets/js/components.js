@@ -27,9 +27,7 @@
   /* ----------------------------- Config ----------------------------- */
 
   var EMAIL = 'al.eagleeyes@gmail.com';
-
   // TODO: replace with your real Formspree form ID — see https://formspree.io
-  // Example: var FORMSPREE_FORM_ID = 'xabcdeyz';
   var FORMSPREE_FORM_ID = 'mpqkkjpl';
 
   /* Inline brand mark — keep small and crisp. To use a custom logo file,
@@ -57,8 +55,6 @@
     { href: '/services/access-control.html', label: 'Access Control' },
     { href: '/services/network-infrastructure.html', label: 'Network Infrastructure' },
     { href: '/services/structured-cabling.html', label: 'Structured Cabling' },
-
-    // Kept as /services/ because /services/commercial-audio-av.html does not currently exist.
     { href: '/services/', label: 'Commercial Audio / AV' }
   ];
 
@@ -88,7 +84,6 @@
     }).join('');
 
     navHost.innerHTML =
-      '<a href="#main" class="skip-link">Skip to main content</a>' +
       '<header class="site-header" role="banner">' +
         '<div class="site-header-inner container-wide">' +
           '<a href="/" class="brand" aria-label="Axonix Integrated Technologies — Home">' +
@@ -130,42 +125,28 @@
 
     function open() {
       drawer.hidden = false;
-      requestAnimationFrame(function () {
-        drawer.classList.add('is-open');
-      });
+      requestAnimationFrame(function () { drawer.classList.add('is-open'); });
       toggle.setAttribute('aria-expanded', 'true');
       toggle.setAttribute('aria-label', 'Close menu');
       document.body.classList.add('drawer-open');
     }
-
     function close() {
       drawer.classList.remove('is-open');
       toggle.setAttribute('aria-expanded', 'false');
       toggle.setAttribute('aria-label', 'Open menu');
       document.body.classList.remove('drawer-open');
-
-      // Wait for transition to finish before hiding from accessibility tree.
-      window.setTimeout(function () {
-        drawer.hidden = true;
-      }, 220);
+      // Wait for transition to finish before hiding from a11y tree
+      window.setTimeout(function () { drawer.hidden = true; }, 220);
     }
 
     toggle.addEventListener('click', function () {
-      if (toggle.getAttribute('aria-expanded') === 'true') {
-        close();
-      } else {
-        open();
-      }
+      if (toggle.getAttribute('aria-expanded') === 'true') close(); else open();
     });
-
     drawer.addEventListener('click', function (e) {
       if (e.target.tagName === 'A') close();
     });
-
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
-        close();
-      }
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') close();
     });
   }
 
@@ -177,9 +158,7 @@
 
   function isActiveLink(currentPath, linkPath) {
     if (linkPath === '/') return currentPath === '/' || currentPath === '/index.html';
-
-    // Match either exact or section prefix.
-    // Example: /services/ matches /services/access-control.html
+    // Match either exact or section prefix (e.g. /services/ matches /services/access-control.html)
     return currentPath.indexOf(linkPath) === 0;
   }
 
@@ -188,7 +167,6 @@
   function buildFooter() {
     var host = document.getElementById('footer-placeholder');
     if (!host) return;
-
     var year = new Date().getFullYear();
 
     host.innerHTML =
@@ -219,7 +197,7 @@
               '<ul>' +
                 '<li><a href="' + PHONE_TEL + '">' + PHONE_DISPLAY + '</a></li>' +
                 '<li><a href="mailto:' + EMAIL + '">' + EMAIL + '</a></li>' +
-                '<li>Licensed &amp; Insured</li>' +
+                '<li>Commercial-grade installation</li>' +
               '</ul>' +
             '</div>' +
           '</div>' +
@@ -229,8 +207,7 @@
           '</div>' +
         '</div>' +
       '</footer>' +
-
-      // Mobile sticky CTA — only visible at narrow widths via CSS.
+      // Mobile sticky CTA — only visible at narrow widths via CSS
       '<div class="mobile-sticky-cta" aria-label="Quick contact actions">' +
         '<a href="' + PHONE_TEL + '" class="mobile-sticky-cta-item" aria-label="Call ' + PHONE_DISPLAY + '">' +
           '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 2l3 1 1 3-2 1a8 8 0 004 4l1-2 3 1 1 3a1 1 0 01-1 1A12 12 0 012 3a1 1 0 011-1z"/></svg>' +
@@ -252,14 +229,12 @@
       });
       return;
     }
-
     if (!('IntersectionObserver' in window)) {
       document.querySelectorAll('.reveal').forEach(function (el) {
         el.classList.add('is-visible');
       });
       return;
     }
-
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -267,10 +242,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      rootMargin: '0px 0px -10% 0px',
-      threshold: 0.05
-    });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
 
     document.querySelectorAll('.reveal').forEach(function (el) {
       observer.observe(el);
@@ -287,28 +259,23 @@
   function initHeaderScroll() {
     var header = document.querySelector('.site-header');
     if (!header) return;
-
     var scrolled = false;
 
     function update() {
       var should = window.scrollY > 8;
-
       if (should !== scrolled) {
         scrolled = should;
         header.classList.toggle('is-scrolled', should);
       }
     }
-
     update();
     window.addEventListener('scroll', update, { passive: true });
   }
 
   /* ----------------------------- CONTACT FORM ----------------------------- */
-  /*
-     Wires any <form data-axonix-contact> on the page to Formspree.
-     Form must include input/select/textarea elements with name attributes.
-     Required fields use the standard required attribute.
-  */
+  /* Wires any <form data-axonix-contact> on the page to Formspree.
+     Form must include input/select/textarea elements with `name` attributes.
+     Required fields use the standard `required` attribute. */
 
   function initContactForm() {
     var form = document.querySelector('form[data-axonix-contact]');
@@ -320,55 +287,36 @@
 
     form.setAttribute('novalidate', 'novalidate');
 
-    // If FORMSPREE_FORM_ID is unset, make that visible up front to whoever is testing.
-    if (FORMSPREE_FORM_ID === 'YOUR_FORM_ID') {
-      console.warn('[Axonix] Formspree form ID not configured. Edit FORMSPREE_FORM_ID in /assets/js/components.js.');
-    }
-
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
       // Honeypot — bots fill this; humans never see it.
       if (honeypot && honeypot.value && honeypot.value.length > 0) {
-        showStatus(statusEl, 'success', 'Thanks — we\'ll be in touch shortly.');
+        showStatus(statusEl, 'success',
+          'Thanks — we\'ll be in touch shortly.');
         form.reset();
         return;
       }
 
-      // Native validation.
+      // Native validation
       if (!form.checkValidity()) {
         showFieldErrors(form);
-
         var firstInvalid = form.querySelector(':invalid');
         if (firstInvalid && firstInvalid.focus) firstInvalid.focus();
-
-        showStatus(statusEl, 'error', 'Please complete the required fields highlighted above.');
+        showStatus(statusEl, 'error',
+          'Please complete the required fields highlighted above.');
         return;
       }
 
-      // Hard safety guard:
-      // If the Formspree ID is still the placeholder, do NOT submit to a broken endpoint.
-      if (FORMSPREE_FORM_ID === 'YOUR_FORM_ID') {
-        showStatus(
-          statusEl,
-          'error',
-          'The contact form is not configured yet. Please call ' +
-            PHONE_DISPLAY +
-            ' or email ' +
-            EMAIL +
-            '.'
-        );
-        return;
-      }
-
-      // Loading state.
+      // Loading state
       setSubmitting(submitBtn, true);
-      showStatus(statusEl, 'pending', 'Sending your request…');
+      showStatus(statusEl, 'pending',
+        'Sending your request…');
 
       var endpoint = 'https://formspree.io/f/' + FORMSPREE_FORM_ID;
       var data = new FormData(form);
 
-      // _replyto helps Formspree route reply-to correctly.
+      // _replyto helps Formspree route reply-to correctly
       if (data.get('email') && !data.get('_replyto')) {
         data.append('_replyto', data.get('email'));
       }
@@ -376,50 +324,37 @@
       fetch(endpoint, {
         method: 'POST',
         body: data,
-        headers: {
-          'Accept': 'application/json'
-        }
+        headers: { 'Accept': 'application/json' }
       })
         .then(function (res) {
           if (res.ok) {
             form.reset();
-
-            showStatus(
-              statusEl,
-              'success',
+            showStatus(statusEl, 'success',
               'Thanks — we received your request. We\'ll respond within one business day. For urgent items, call ' +
-                PHONE_DISPLAY +
-                '.'
-            );
-
-            // Move focus to status so screen readers announce it.
+              PHONE_DISPLAY + '.');
+            // Move focus to status so screen readers announce
             if (statusEl) statusEl.focus();
           } else {
             return res.json().then(function (body) {
               var msg = (body && body.errors && body.errors.length)
                 ? body.errors.map(function (er) { return er.message; }).join(', ')
                 : 'Something went wrong. Please call ' + PHONE_DISPLAY + ' or email ' + EMAIL + '.';
-
               showStatus(statusEl, 'error', msg);
             });
           }
         })
         .catch(function () {
-          showStatus(
-            statusEl,
-            'error',
-            'Network error. Please call ' + PHONE_DISPLAY + ' or email ' + EMAIL + '.'
-          );
+          showStatus(statusEl, 'error',
+            'Network error. Please call ' + PHONE_DISPLAY + ' or email ' + EMAIL + '.');
         })
         .then(function () {
           setSubmitting(submitBtn, false);
         });
     });
 
-    // Clear field-level error when user edits.
+    // Clear field-level error when user edits
     form.addEventListener('input', function (e) {
       var t = e.target;
-
       if (t && t.classList && t.classList.contains('is-error')) {
         t.classList.remove('is-error');
       }
@@ -428,20 +363,15 @@
 
   function showFieldErrors(form) {
     form.querySelectorAll('[required]').forEach(function (el) {
-      if (!el.checkValidity()) {
-        el.classList.add('is-error');
-      } else {
-        el.classList.remove('is-error');
-      }
+      if (!el.checkValidity()) el.classList.add('is-error');
+      else el.classList.remove('is-error');
     });
   }
 
   function setSubmitting(btn, isSubmitting) {
     if (!btn) return;
-
     btn.disabled = isSubmitting;
     btn.setAttribute('aria-busy', isSubmitting ? 'true' : 'false');
-
     if (isSubmitting) {
       btn.dataset.label = btn.dataset.label || btn.textContent.trim();
       btn.textContent = 'Sending…';
@@ -452,10 +382,8 @@
 
   function showStatus(el, kind, text) {
     if (!el) return;
-
     el.className = 'form-status form-status-' + kind;
     el.textContent = text;
-
     if (kind === 'error') {
       el.setAttribute('role', 'alert');
       el.setAttribute('aria-live', 'assertive');
@@ -463,18 +391,14 @@
       el.setAttribute('role', 'status');
       el.setAttribute('aria-live', 'polite');
     }
-
     el.tabIndex = -1;
   }
 
   /* ----------------------------- BOOT ----------------------------- */
 
   function ready(fn) {
-    if (document.readyState !== 'loading') {
-      fn();
-    } else {
-      document.addEventListener('DOMContentLoaded', fn);
-    }
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
   }
 
   ready(function () {
