@@ -3,18 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Commercial Security & Low-Voltage Systems Metro Detroit | Axonix</title>
   <meta name="description" content="Axonix designs commercial security, access control, structured cabling, network infrastructure, AV, monitoring, and low-voltage lighting systems across Metro Detroit." />
   <link rel="canonical" href="https://axonixintegrated.com/" />
+
   <meta property="og:title" content="Commercial Security & Low-Voltage Systems Metro Detroit | Axonix" />
   <meta property="og:description" content="Commercial security, network, AV, and low-voltage infrastructure designed for long-term reliability." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://axonixintegrated.com/" />
+
   <meta name="theme-color" content="#05070d" />
-  <link rel="preload" as="image" href="assets/img/hero-fallback.jpg" media="(max-width: 768px)" />
-  <link rel="preconnect" href="https://images.unsplash.com" />
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- CSS FILES — IMPORTANT: these match your GitHub folder structure -->
+  <link rel="stylesheet" href="/assets/css/shared.css" />
+  <link rel="stylesheet" href="/assets/css/accessibility.css" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <!-- Optional hero fallback image. Add this file later if it does not exist yet. -->
+  <link rel="preload" as="image" href="/assets/img/hero-fallback.jpg" media="(max-width: 768px)" />
 </head>
+
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
@@ -28,7 +37,9 @@
     </a>
 
     <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
 
     <nav class="nav" data-nav aria-label="Primary navigation">
@@ -47,15 +58,18 @@
   </header>
 
   <main id="main">
+    <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title" data-parallax-section>
       <div class="hero-media" aria-hidden="true">
-        <!-- Add your compressed hero files here:
-             assets/media/axonix-hero.webm and assets/media/axonix-hero.mp4
-             The animated image fallback still works if video files are missing. -->
-        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-fallback.jpg">
-          <source src="assets/media/axonix-hero.webm" type="video/webm" />
-          <source src="assets/media/axonix-hero.mp4" type="video/mp4" />
+        <!-- Add video files later:
+             /assets/media/axonix-hero.webm
+             /assets/media/axonix-hero.mp4
+        -->
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="/assets/img/hero-fallback.jpg">
+          <source src="/assets/media/axonix-hero.webm" type="video/webm" />
+          <source src="/assets/media/axonix-hero.mp4" type="video/mp4" />
         </video>
+
         <div class="hero-fallback"></div>
         <div class="hero-overlay"></div>
         <div class="motion-grid"></div>
@@ -65,8 +79,13 @@
       <div class="container hero-content">
         <div class="hero-copy reveal">
           <p class="eyebrow">Metro Detroit Commercial Low-Voltage Integrator</p>
-          <h1 id="hero-title">We Don’t Install Systems.<span>We Engineer Infrastructure.</span></h1>
-          <p class="hero-lead">Commercial security, access control, network, AV, and low-voltage systems designed around clean cabling, reliable power, and long-term serviceability.</p>
+          <h1 id="hero-title">
+            We Don’t Install Systems.
+            <span>We Engineer Infrastructure.</span>
+          </h1>
+          <p class="hero-lead">
+            Commercial security, access control, network, AV, and low-voltage systems designed around clean cabling, reliable power, and long-term serviceability.
+          </p>
           <div class="hero-actions">
             <a class="btn" href="/contact/">Request a System Design</a>
             <a class="btn btn-secondary" href="#work">View Project Types</a>
@@ -76,11 +95,15 @@
         <aside class="command-card reveal delay-2" aria-label="Integrated system disciplines">
           <div class="command-card-glow"></div>
           <p class="command-kicker">Integrated Stack</p>
+
           <div class="command-screen">
             <div class="screen-header">
-              <span></span><span></span><span></span>
+              <span></span>
+              <span></span>
+              <span></span>
               <small>AXONIX / SYSTEM MAP</small>
             </div>
+
             <div class="system-map" aria-hidden="true">
               <span class="node node-main">Core</span>
               <span class="node n1">Cabling</span>
@@ -89,6 +112,7 @@
               <span class="node n4">Access</span>
               <span class="node n5">AV</span>
               <span class="node n6">Support</span>
+
               <svg viewBox="0 0 520 360" preserveAspectRatio="none">
                 <path class="dash p1" d="M260 180 L85 70" />
                 <path class="dash p2" d="M260 180 L260 50" />
@@ -99,6 +123,7 @@
               </svg>
             </div>
           </div>
+
           <div class="signal-list">
             <span><strong>01</strong> Site conditions</span>
             <span><strong>02</strong> Cable paths</span>
@@ -113,6 +138,7 @@
       </a>
     </section>
 
+    <!-- TRUST STRIP -->
     <section class="trust-strip" aria-label="Project focus">
       <div class="container trust-items reveal-group">
         <span class="reveal">Commercial Projects</span>
@@ -122,12 +148,15 @@
       </div>
     </section>
 
+    <!-- STACK -->
     <section class="section stack-section" id="stack">
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">How the Systems Work Together</p>
           <h2>One infrastructure stack. Fewer weak links.</h2>
-          <p>Security systems are only as reliable as the cabling, network, power, and documentation behind them. Axonix plans the full low-voltage ecosystem so each layer supports the next.</p>
+          <p>
+            Security systems are only as reliable as the cabling, network, power, and documentation behind them. Axonix plans the full low-voltage ecosystem so each layer supports the next.
+          </p>
         </div>
 
         <div class="stack-grid reveal-group">
@@ -136,26 +165,31 @@
             <h3>Structured Cabling</h3>
             <p>Clean cable paths, labeling, terminations, and rack-ready documentation.</p>
           </a>
+
           <a class="stack-card reveal" href="/services/network-infrastructure.html">
             <span>02</span>
             <h3>Network / PoE</h3>
             <p>Switching, PoE planning, VLAN-ready infrastructure, and stable remote access.</p>
           </a>
+
           <a class="stack-card reveal" href="/services/surveillance.html">
             <span>03</span>
             <h3>Surveillance</h3>
             <p>Camera placement, NVR design, storage planning, and remote viewing access.</p>
           </a>
+
           <a class="stack-card reveal" href="/services/access-control.html">
             <span>04</span>
             <h3>Access Control</h3>
             <p>Readers, locks, controllers, door hardware coordination, and access workflows.</p>
           </a>
+
           <a class="stack-card reveal" href="/services/commercial-audio-av.html">
             <span>05</span>
             <h3>Commercial Audio / AV</h3>
             <p>Facility audio, display routing, presentation systems, and user-friendly control.</p>
           </a>
+
           <a class="stack-card reveal" href="/services/low-voltage-led-lighting.html">
             <span>06</span>
             <h3>Low-Voltage Lighting</h3>
@@ -165,12 +199,15 @@
       </div>
     </section>
 
+    <!-- DIFFERENCE -->
     <section class="section difference" id="difference">
       <div class="container comparison-grid">
         <div class="section-head reveal">
           <p class="eyebrow">Why Facilities Choose Axonix</p>
           <h2>The install is only one part of the system.</h2>
-          <p>Commercial buyers need a system that can be serviced, expanded, documented, and trusted after the installation crew leaves.</p>
+          <p>
+            Commercial buyers need a system that can be serviced, expanded, documented, and trusted after the installation crew leaves.
+          </p>
         </div>
 
         <div class="compare-panels reveal-group">
@@ -184,6 +221,7 @@
               <li>Customer troubleshoots later</li>
             </ul>
           </div>
+
           <div class="compare-card featured reveal">
             <h3>Axonix Approach</h3>
             <ul>
@@ -198,22 +236,29 @@
       </div>
     </section>
 
+    <!-- WOW SECTION -->
     <section class="wow" aria-labelledby="wow-title" data-parallax-section>
       <div class="wow-bg" aria-hidden="true"></div>
       <div class="wow-overlay" aria-hidden="true"></div>
+
       <div class="container wow-content reveal">
         <p class="eyebrow">The “Behind the Walls” Difference</p>
         <h2 id="wow-title">The customer sees the cameras. We engineer everything that keeps them online.</h2>
-        <p>Rack layout, cable labeling, PoE budget, storage, access permissions, and remote service access all matter. That is where commercial reliability is built.</p>
+        <p>
+          Rack layout, cable labeling, PoE budget, storage, access permissions, and remote service access all matter. That is where commercial reliability is built.
+        </p>
       </div>
     </section>
 
+    <!-- WORK -->
     <section class="section work-section" id="work">
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">Project Types</p>
           <h2>Built for facilities where uptime matters.</h2>
-          <p>Replace these premium placeholders with real Axonix project photos as soon as possible. Real photos will make the biggest trust difference.</p>
+          <p>
+            Replace these premium placeholders with real Axonix project photos as soon as possible. Real photos will make the biggest trust difference.
+          </p>
         </div>
 
         <div class="work-grid reveal-group">
@@ -223,18 +268,21 @@
               <h3>Wide-area camera coverage, rack-based infrastructure, and scalable network design.</h3>
             </div>
           </a>
+
           <a class="work-card image-retail reveal" href="/industries/retail.html">
             <div>
               <span>Retail</span>
               <h3>POS-area visibility, entrance coverage, staff workflows, and remote access.</h3>
             </div>
           </a>
+
           <a class="work-card image-church reveal" href="/industries/churches.html">
             <div>
               <span>Churches</span>
               <h3>Access control, AV, cameras, and volunteer-friendly operation.</h3>
             </div>
           </a>
+
           <a class="work-card image-carwash reveal" href="/industries/car-washes.html">
             <div>
               <span>Car Washes</span>
@@ -245,6 +293,7 @@
       </div>
     </section>
 
+    <!-- SERVICES -->
     <section class="section services-visual" id="services">
       <div class="container">
         <div class="section-head reveal">
@@ -253,52 +302,139 @@
         </div>
 
         <div class="service-grid reveal-group">
-          <a class="service-card reveal" href="/services/surveillance.html"><span>01</span><h3>Surveillance</h3><p>IP cameras, NVRs, placement, remote viewing, and storage design.</p></a>
-          <a class="service-card reveal" href="/services/access-control.html"><span>02</span><h3>Access Control</h3><p>Readers, door controllers, locks, schedules, and access workflows.</p></a>
-          <a class="service-card reveal" href="/services/structured-cabling.html"><span>03</span><h3>Structured Cabling</h3><p>Cat6, racks, patch panels, labeling, and cable certification-ready practices.</p></a>
-          <a class="service-card reveal" href="/services/network-infrastructure.html"><span>04</span><h3>Network Infrastructure</h3><p>PoE switching, rack layout, VLAN-ready designs, and secure remote access.</p></a>
-          <a class="service-card reveal" href="/services/commercial-audio-av.html"><span>05</span><h3>Commercial Audio / AV</h3><p>Speakers, displays, control, distributed audio, and presentation systems.</p></a>
-          <a class="service-card reveal" href="/services/monitoring-support.html"><span>06</span><h3>Monitoring & Support</h3><p>Remote access support, system health checks, and ongoing maintenance.</p></a>
-          <a class="service-card reveal" href="/services/low-voltage-led-lighting.html"><span>07</span><h3>Low-Voltage LED Lighting</h3><p>12V / 24V accent, landscape, pathway, and smart-control lighting.</p></a>
+          <a class="service-card reveal" href="/services/surveillance.html">
+            <span>01</span>
+            <h3>Surveillance</h3>
+            <p>IP cameras, NVRs, placement, remote viewing, and storage design.</p>
+          </a>
+
+          <a class="service-card reveal" href="/services/access-control.html">
+            <span>02</span>
+            <h3>Access Control</h3>
+            <p>Readers, door controllers, locks, schedules, and access workflows.</p>
+          </a>
+
+          <a class="service-card reveal" href="/services/structured-cabling.html">
+            <span>03</span>
+            <h3>Structured Cabling</h3>
+            <p>Cat6, racks, patch panels, labeling, and cable certification-ready practices.</p>
+          </a>
+
+          <a class="service-card reveal" href="/services/network-infrastructure.html">
+            <span>04</span>
+            <h3>Network Infrastructure</h3>
+            <p>PoE switching, rack layout, VLAN-ready designs, and secure remote access.</p>
+          </a>
+
+          <a class="service-card reveal" href="/services/commercial-audio-av.html">
+            <span>05</span>
+            <h3>Commercial Audio / AV</h3>
+            <p>Speakers, displays, control, distributed audio, and presentation systems.</p>
+          </a>
+
+          <a class="service-card reveal" href="/services/monitoring-support.html">
+            <span>06</span>
+            <h3>Monitoring & Support</h3>
+            <p>Remote access support, system health checks, and ongoing maintenance.</p>
+          </a>
+
+          <a class="service-card reveal" href="/services/low-voltage-led-lighting.html">
+            <span>07</span>
+            <h3>Low-Voltage LED Lighting</h3>
+            <p>12V / 24V accent, landscape, pathway, and smart-control lighting.</p>
+          </a>
         </div>
       </div>
     </section>
 
+    <!-- INDUSTRIES -->
     <section class="section industries" id="industries">
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">Industries Served</p>
           <h2>Designed around the way each facility operates.</h2>
         </div>
+
         <div class="industry-grid reveal-group">
-          <a class="reveal" href="/industries/warehouses.html">Warehouses<span>Coverage, loading docks, racks, and remote visibility.</span></a>
-          <a class="reveal" href="/industries/churches.html">Churches<span>Access, cameras, AV, and simpler operation for teams.</span></a>
-          <a class="reveal" href="/industries/retail.html">Retail<span>Entrances, registers, storage areas, and staff accountability.</span></a>
-          <a class="reveal" href="/industries/car-washes.html">Car Washes<span>Exterior camera durability and tunnel visibility.</span></a>
-          <a class="reveal" href="/industries/offices.html">Offices<span>Door access, cameras, conference AV, and network systems.</span></a>
-          <a class="reveal" href="/industries/multi-site-businesses.html">Multi-Site<span>Repeatable standards across locations.</span></a>
+          <a class="reveal" href="/industries/warehouses.html">
+            Warehouses
+            <span>Coverage, loading docks, racks, and remote visibility.</span>
+          </a>
+
+          <a class="reveal" href="/industries/churches.html">
+            Churches
+            <span>Access, cameras, AV, and simpler operation for teams.</span>
+          </a>
+
+          <a class="reveal" href="/industries/retail.html">
+            Retail
+            <span>Entrances, registers, storage areas, and staff accountability.</span>
+          </a>
+
+          <a class="reveal" href="/industries/car-washes.html">
+            Car Washes
+            <span>Exterior camera durability and tunnel visibility.</span>
+          </a>
+
+          <a class="reveal" href="/industries/offices.html">
+            Offices
+            <span>Door access, cameras, conference AV, and network systems.</span>
+          </a>
+
+          <a class="reveal" href="/industries/multi-site-businesses.html">
+            Multi-Site
+            <span>Repeatable standards across locations.</span>
+          </a>
         </div>
       </div>
     </section>
 
+    <!-- PROCESS -->
     <section class="section process-section" id="process">
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">Process</p>
           <h2>Clear steps. Cleaner outcomes.</h2>
         </div>
+
         <div class="process-line reveal-group">
-          <div class="process-step reveal"><span>1</span><h3>Site Review</h3><p>Walk the facility, identify risk areas, and confirm practical cable paths.</p></div>
-          <div class="process-step reveal"><span>2</span><h3>System Design</h3><p>Plan cameras, doors, network, rack layout, power, and user workflows.</p></div>
-          <div class="process-step reveal"><span>3</span><h3>Installation</h3><p>Install cleanly with labeled cabling, documented terminations, and organized equipment.</p></div>
-          <div class="process-step reveal"><span>4</span><h3>Testing</h3><p>Verify coverage, recording, access, audio, network reachability, and remote use.</p></div>
-          <div class="process-step reveal"><span>5</span><h3>Handoff</h3><p>Provide clear user guidance and a system that can be serviced later.</p></div>
+          <div class="process-step reveal">
+            <span>1</span>
+            <h3>Site Review</h3>
+            <p>Walk the facility, identify risk areas, and confirm practical cable paths.</p>
+          </div>
+
+          <div class="process-step reveal">
+            <span>2</span>
+            <h3>System Design</h3>
+            <p>Plan cameras, doors, network, rack layout, power, and user workflows.</p>
+          </div>
+
+          <div class="process-step reveal">
+            <span>3</span>
+            <h3>Installation</h3>
+            <p>Install cleanly with labeled cabling, documented terminations, and organized equipment.</p>
+          </div>
+
+          <div class="process-step reveal">
+            <span>4</span>
+            <h3>Testing</h3>
+            <p>Verify coverage, recording, access, audio, network reachability, and remote use.</p>
+          </div>
+
+          <div class="process-step reveal">
+            <span>5</span>
+            <h3>Handoff</h3>
+            <p>Provide clear user guidance and a system that can be serviced later.</p>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- FINAL CTA -->
     <section class="final-cta" aria-labelledby="cta-title">
       <div class="cta-grid" aria-hidden="true"></div>
+
       <div class="container reveal">
         <p class="eyebrow">Start With a Better Design</p>
         <h2 id="cta-title">Let’s build your system right the first time.</h2>
@@ -307,15 +443,20 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
         <a class="brand" href="/" aria-label="Axonix home">
           <span class="brand-mark" aria-hidden="true">AX</span>
-          <span class="brand-text"><strong>Axonix</strong><small>Integrated Technologies</small></span>
+          <span class="brand-text">
+            <strong>Axonix</strong>
+            <small>Integrated Technologies</small>
+          </span>
         </a>
         <p>Commercial security and low-voltage infrastructure for Metro Detroit facilities.</p>
       </div>
+
       <div>
         <h3>Services</h3>
         <a href="/services/surveillance.html">Surveillance</a>
@@ -323,6 +464,7 @@
         <a href="/services/structured-cabling.html">Structured Cabling</a>
         <a href="/services/network-infrastructure.html">Network Infrastructure</a>
       </div>
+
       <div>
         <h3>Industries</h3>
         <a href="/industries/warehouses.html">Warehouses</a>
@@ -330,20 +472,27 @@
         <a href="/industries/retail.html">Retail</a>
         <a href="/industries/car-washes.html">Car Washes</a>
       </div>
+
       <div>
         <h3>Contact</h3>
         <a href="tel:15863395370">586-339-5370</a>
         <a href="/contact/">Request Assessment</a>
       </div>
     </div>
-    <div class="container footer-bottom">© <span id="year"></span> Axonix Integrated Technologies. All rights reserved.</div>
+
+    <div class="container footer-bottom">
+      © <span id="year"></span> Axonix Integrated Technologies. All rights reserved.
+    </div>
   </footer>
 
+  <!-- STICKY MOBILE CTA -->
   <div class="sticky-cta" data-sticky-cta aria-hidden="true">
     <a class="btn btn-secondary" href="tel:15863395370">Call</a>
     <a class="btn" href="/contact/">Request Assessment</a>
   </div>
 
-  <script src="script.js" defer></script>
+  <!-- JS FILES — IMPORTANT: these match your GitHub folder structure -->
+  <script src="/assets/js/components.js" defer></script>
+  <script src="/assets/js/script.js" defer></script>
 </body>
 </html>
