@@ -1,0 +1,1 @@
+Place approved real project WebP images here. Suggested names: network-rack.webp, camera-install.webp, access-control-reader.webp, led-lighting-install.webp, warehouse-surveillance.webp. Do not upload photos with customer names, passwords, IP addresses, faces without permission, or sensitive security angles.

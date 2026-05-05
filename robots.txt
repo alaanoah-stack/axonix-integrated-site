@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /dev/
+Disallow: /tmp/
+
+Sitemap: https://axonixintegrated.com/sitemap.xml
