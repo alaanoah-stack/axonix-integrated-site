@@ -29,7 +29,20 @@
   }
   function initForm(){
     var form=document.getElementById('contact-form');if(!form)return;var status=document.getElementById('form-status');var btn=document.getElementById('submit-btn');
-    form.addEventListener('submit',function(e){var hp=form.querySelector('#website');if(hp&&hp.value){e.preventDefault();return;}if(btn){btn.disabled=true;btn.textContent='Sending...';btn.setAttribute('aria-busy','true');}});
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var hp=form.querySelector('#website');if(hp&&hp.value){return;}
+      if(btn){btn.disabled=true;btn.textContent='Sending...';btn.setAttribute('aria-busy','true');}
+      fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+        .then(function(res){
+          if(res.ok){window.location.href='/thank-you/';}
+          else{throw new Error('send failed');}
+        })
+        .catch(function(){
+          if(status){status.className='form-status error';status.textContent='Something went wrong sending your request. Please call or text 586-339-5370 and we will take care of you directly.';}
+          if(btn){btn.disabled=false;btn.textContent='Request My Free Assessment';btn.removeAttribute('aria-busy');}
+        });
+    });
   }
   function updateYear(){var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();}
   function checkTel(){document.querySelectorAll('a[href^="tel:"]').forEach(function(a){if(a.getAttribute('href')!=='tel:'+CONFIG.PHONE)console.warn('Phone link mismatch:',a.getAttribute('href'));});}
