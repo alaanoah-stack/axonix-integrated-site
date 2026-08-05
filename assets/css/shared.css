@@ -12,3 +12,17 @@ footer{background:var(--color-bg-alt);border-top:1px solid var(--color-border);p
 @media(max-width:768px){.comparison-grid,.services-listing-grid,.industries-listing-grid{grid-template-columns:1fr}.section{padding:58px 0}.systems-stack{padding:14px}.systems-stack-panels{padding:22px}}
 @media(max-width:600px){.hero{padding:68px 0 52px}.hero-ctas{flex-direction:column}.hero-ctas .btn{width:100%}.trust-strip ul{flex-direction:column;align-items:center;gap:8px}.footer-grid{grid-template-columns:1fr}.sticky-cta{display:block}body.contact-page main{padding-bottom:92px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.systems-tab[aria-selected="true"] .systems-tab-arrow{transform:none!important}}
+
+/* === Conversion updates (Aug 2026) === */
+.btn-amber{background:linear-gradient(135deg,#f5a623,#e8890c);color:#1a1205}
+.btn-amber:hover{filter:saturate(1.1) brightness(1.05)}
+.contact-meta{font-size:.95rem;color:var(--color-text-dim);line-height:1.7}
+.response-promise{background:rgba(245,166,35,.08);border:1px solid rgba(245,166,35,.3);border-radius:8px;padding:14px 18px;margin:0 0 20px;color:var(--color-text);font-size:.95rem}
+.form-alt-contact{margin-top:16px;text-align:center;color:var(--color-text-dim);font-size:.95rem}
+.form-alt-contact a{color:var(--color-cyan);font-weight:700;text-decoration:none}
+.optional-tag{font-weight:400;color:var(--color-text-dim);font-size:.85rem}
+.thank-you-wrap{max-width:640px;margin:0 auto;padding:80px 24px 100px;text-align:center}
+.thank-you-wrap h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,5vw,2.75rem);margin:0 0 16px}
+.thank-you-wrap p{color:var(--color-text-dim);margin:0 0 20px}
+.thank-you-steps{text-align:left;background:rgba(255,255,255,.04);border:1px solid var(--color-border);border-radius:12px;padding:24px 28px;margin:28px 0;list-style-position:inside;color:var(--color-text-dim)}
+.thank-you-steps li{padding:6px 0}
